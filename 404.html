@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>页面未找到 · BY Run 长跑社</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14161A">
+<script>(function(){try{var t=localStorage.getItem('byrun-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+<link rel="icon" data-roothref="assets/img/logo.svg" href="assets/img/logo.svg">
+<style>
+:root{
+  --bg:#14161A; --surface:#1C1F24; --text:#E8E6E1; --text-dim:#9A978F;
+  --brand:#E8590C; --brand-soft:#F0997B; --border:rgba(255,255,255,.12);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+}
+[data-theme="light"]{
+  --bg:#FFFFFF; --surface:#F6F5F3; --text:#1F1E1C; --text-dim:#6B6862;
+  --brand-soft:#C2410C; --border:rgba(0,0,0,.12);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+  padding:24px; background:var(--bg); color:var(--text);
+  font-family:var(--font); font-size:16px; line-height:1.7;
+}
+.box{max-width:520px; text-align:center;}
+.logo{width:56px;height:56px;border-radius:14px;margin:0 auto 24px;display:block;}
+.code{
+  font-family:ui-monospace,Consolas,monospace; font-size:64px; line-height:1;
+  color:var(--brand); margin:0 0 12px; letter-spacing:-.02em;
+}
+h1{font-size:24px;margin:0 0 12px;font-weight:600;}
+p{color:var(--text-dim);margin:0 0 24px;}
+.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px;}
+a.btn{
+  display:inline-block;padding:10px 18px;border-radius:8px;font-size:14px;
+  text-decoration:none;border:1px solid var(--border);color:var(--text);
+}
+a.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff;}
+a.btn:hover{text-decoration:none;opacity:.9;}
+small{color:var(--text-dim);font-size:13px;}
+</style>
+</head>
+<body>
+<div class="box">
+  <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+    <rect width="64" height="64" rx="14" fill="#E8590C"/>
+    <path d="M18 46 L26 38" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+    <path d="M24 51 L32 43" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+    <path d="M22 38 L42 18" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M42 18 H31" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <path d="M42 18 V29" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+  </svg>
+  <p class="code">404</p>
+  <h1>这条路没有跑到</h1>
+  <p>你访问的页面不存在，可能是链接写错了，或者内容已经调整过位置。</p>
+  <div class="links">
+    <a class="btn primary" data-root href="index.html">回到首页</a>
+    <a class="btn" data-root href="training.html">看训练计划</a>
+    <a class="btn" data-root href="join.html">加入我们</a>
+  </div>
+  <small>BY Run 长跑社</small>
+</div>
+<script>
+/* 404 页面可能出现在任意路径下，这里把链接指回站点根目录 */
+(function () {
+  var root = window.location.pathname.replace(/[^/]*$/, '');
+  var nodes = document.querySelectorAll('[data-roothref]');
+  Array.prototype.forEach.call(nodes, function (n) {
+    n.setAttribute('href', root + n.getAttribute('data-roothref'));
+  });
+  nodes = document.querySelectorAll('a[data-root]');
+  Array.prototype.forEach.call(nodes, function (n) {
+    n.setAttribute('href', root + n.getAttribute('href'));
+  });
+})();
+</script>
+</body>
+</html>

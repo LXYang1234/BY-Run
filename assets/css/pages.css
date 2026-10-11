@@ -1,0 +1,248 @@
+/* ============================================================
+   BY Run 长跑社 — 页面版式层
+   首页 Hero、报名页、成绩页、成员页等的专属布局
+   ============================================================ */
+
+/* ============ 首页 Hero ============ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.hero::after {           /* 起跑线斜纹装饰 */
+  content: "";
+  position: absolute;
+  top: 0; right: -60px; bottom: 0;
+  width: 320px;
+  background-image: repeating-linear-gradient(
+    115deg,
+    var(--brand-wash) 0 10px,
+    transparent 10px 26px
+  );
+  opacity: .9;
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: var(--s8) 0;
+  max-width: 44rem;
+}
+.hero .kicker {
+  margin: 0 0 var(--s3);
+  font-size: var(--fs-xs);
+  letter-spacing: .1em;
+  color: var(--brand-soft);
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.15;
+  margin-bottom: var(--s4);
+  letter-spacing: -.02em;
+}
+.hero .lead {
+  font-size: var(--fs-h3);
+  color: var(--text-dim);
+  margin-bottom: var(--s5);
+  max-width: 34rem;
+}
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s6);
+  margin-top: var(--s6);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+}
+.hero-facts strong { color: var(--text); font-weight: 600; }
+
+/* ============ 里程刻度装饰条 ============ */
+.ticker {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.ticker-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s5);
+  padding: var(--s3) 0;
+  font-family: var(--font-num);
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.ticker-inner span::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background: var(--border-strong);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* ============ 报名页 ============ */
+.join-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--s6);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .join-layout { grid-template-columns: minmax(0, 1fr); }
+}
+.qr-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s5);
+  text-align: center;
+}
+.qr-card img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto var(--s4);
+  border-radius: var(--r-sm);
+  background: #fff;
+}
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--fs-sm);
+}
+.contact-list li {
+  display: flex;
+  gap: var(--s3);
+  padding: 9px 0;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+.contact-list li:first-child { border-top: 0; }
+.contact-list dt, .contact-list .k {
+  flex: none;
+  width: 76px;
+  color: var(--text-dim);
+}
+
+/* ============ 成员卡片 ============ */
+.member {
+  display: flex;
+  gap: var(--s4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s5);
+}
+.member__avatar {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-pill);
+  background: var(--brand-wash);
+  color: var(--brand-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  overflow: hidden;
+}
+.member__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.member__name { margin: 0 0 2px; font-size: var(--fs-h3); font-weight: 600; }
+.member__role { margin: 0 0 var(--s2); font-size: var(--fs-xs); color: var(--brand-soft); }
+.member__bio { margin: 0; font-size: var(--fs-sm); color: var(--text-dim); }
+
+.name-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--s2) var(--s3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--fs-sm);
+}
+.name-grid li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+}
+.name-grid .n { color: var(--text); }
+.name-grid .y { color: var(--text-faint); font-size: var(--fs-xs); font-family: var(--font-num); margin-left: auto; }
+
+/* ============ 训练页 ============ */
+.week-plan {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--s2);
+}
+.day {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s4) var(--s3);
+  min-height: 132px;
+}
+.day.is-rest { background: transparent; border-style: dashed; }
+.day__name {
+  margin: 0 0 var(--s3);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  letter-spacing: .04em;
+}
+.day__time {
+  margin: 0 0 2px;
+  font-size: var(--fs-xs);
+  color: var(--brand-soft);
+  font-family: var(--font-num);
+}
+.day__place {
+  margin: 0 0 var(--s2);
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+.day__what { margin: 0; font-size: var(--fs-sm); line-height: 1.55; }
+@media (max-width: 1024px) {
+  .week-plan { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .week-plan { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .day { min-height: auto; }
+}
+
+.route {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: var(--s4);
+  padding: var(--s4) 0;
+  border-top: 1px solid var(--border);
+}
+.route:first-of-type { border-top: 0; }
+.route__dist {
+  font-family: var(--font-num);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--brand-soft);
+}
+.route__name { margin: 0 0 2px; font-weight: 600; }
+.route__desc { margin: 0; color: var(--text-dim); font-size: var(--fs-sm); }
+
+/* ============ 404 ============ */
+.nf {
+  text-align: center;
+  padding: var(--s8) 0;
+}
+.nf__code {
+  font-family: var(--font-num);
+  font-size: 72px;
+  line-height: 1;
+  color: var(--brand);
+  margin: 0 0 var(--s4);
+}

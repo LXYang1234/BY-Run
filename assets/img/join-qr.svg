@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="招新群二维码占位图">
+  <title>招新群二维码占位图</title>
+  <rect width="400" height="400" fill="#FFFFFF"/>
+  <g fill="#D9D7D2">
+    <rect x="24" y="24" width="96" height="96"/>
+    <rect x="280" y="24" width="96" height="96"/>
+    <rect x="24" y="280" width="96" height="96"/>
+  </g>
+  <g fill="#FFFFFF">
+    <rect x="44" y="44" width="56" height="56"/>
+    <rect x="300" y="44" width="56" height="56"/>
+    <rect x="44" y="300" width="56" height="56"/>
+  </g>
+  <g fill="#D9D7D2">
+    <rect x="62" y="62" width="20" height="20"/>
+    <rect x="318" y="62" width="20" height="20"/>
+    <rect x="62" y="318" width="20" height="20"/>
+    <rect x="140" y="40" width="16" height="16"/>
+    <rect x="172" y="40" width="16" height="16"/>
+    <rect x="204" y="40" width="16" height="16"/>
+    <rect x="140" y="72" width="16" height="16"/>
+    <rect x="204" y="72" width="16" height="16"/>
+    <rect x="140" y="104" width="16" height="16"/>
+    <rect x="172" y="104" width="16" height="16"/>
+    <rect x="236" y="104" width="16" height="16"/>
+    <rect x="140" y="280" width="16" height="16"/>
+    <rect x="204" y="280" width="16" height="16"/>
+    <rect x="236" y="312" width="16" height="16"/>
+    <rect x="140" y="344" width="16" height="16"/>
+    <rect x="204" y="344" width="16" height="16"/>
+  </g>
+  <rect x="0" y="166" width="400" height="68" fill="#FFFFFF"/>
+  <text x="200" y="203" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="18" fill="#1F1E1C">招新群二维码（占位图）</text>
+  <rect x="4" y="4" width="392" height="392" fill="none" stroke="#C9C6C0" stroke-width="2" stroke-dasharray="8 6"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="活动照片占位图 02">
+  <title>活动照片占位图 02</title>
+  <rect width="800" height="600" fill="#2A2E35"/>
+  <g stroke="#E8590C" stroke-width="10" opacity="0.22">
+    <path d="M-100 480 L400 160" fill="none"/>
+    <path d="M-100 560 L480 160" fill="none"/>
+  </g>
+  <circle cx="400" cy="270" r="54" fill="none" stroke="#F0997B" stroke-width="6"/>
+  <path d="M372 300 L400 244 L428 300" fill="none" stroke="#F0997B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="378" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="26" fill="#E8E6E1">活动照片占位</text>
+  <text x="400" y="414" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="18" fill="#9A978F">02 · 替换为真实照片</text>
+</svg>

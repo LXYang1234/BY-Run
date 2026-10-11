@@ -1,0 +1,114 @@
+/* ============================================================
+   BY Run 长跑社 — 设计变量（Design Tokens）
+   风格：运动活力 · 橙红
+   主题：暗色为默认，[data-theme="light"] 覆盖为亮色
+   ------------------------------------------------------------
+   修改配色只需改这一个文件，全站自动生效。
+   ============================================================ */
+
+:root {
+  /* ---------- 品牌色 ---------- */
+  --brand: #E8590C;          /* 品牌橙红：按钮、强调、图表主色 */
+  --brand-soft: #F0997B;     /* 深底上的浅色文字用（保证对比度） */
+  --brand-deep: #C2410C;     /* 亮底上的深色文字用 */
+  --brand-wash: rgba(232, 89, 12, .12);  /* 极浅的品牌色底 */
+
+  /* ---------- 中性色（暗色，默认） ---------- */
+  --bg: #14161A;             /* 页面背景 */
+  --surface: #1C1F24;        /* 卡片 / 次级面 */
+  --surface-2: #23272E;      /* 更浅一层（悬停、表头） */
+  --text: #E8E6E1;           /* 主文字 */
+  --text-dim: #9A978F;       /* 次文字 */
+  --text-faint: #6E6B65;     /* 辅助 / 提示 */
+  --border: rgba(255, 255, 255, .12);
+  --border-strong: rgba(255, 255, 255, .26);
+  --overlay: rgba(8, 9, 11, .82);   /* 灯箱遮罩 */
+
+  /* ---------- 语义色 ---------- */
+  --ok: #5DCAA5;
+  --warn: #EF9F27;
+  --err: #F09595;
+
+  /* ---------- 字体 ---------- */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+          "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  --font-num: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --fs-h1: 32px;   /* 页面主标题 */
+  --fs-h2: 24px;   /* 区块标题 */
+  --fs-h3: 18px;   /* 卡片标题 */
+  --fs-body: 16px;
+  --fs-sm: 14px;
+  --fs-xs: 13px;
+
+  --lh-tight: 1.3;
+  --lh-body: 1.7;
+
+  /* ---------- 间距（8px 基准栅格） ---------- */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+
+  /* ---------- 形状 ---------- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* ---------- 布局 ---------- */
+  --container: 1120px;
+  --header-h: 64px;
+
+  /* ---------- 动效 ---------- */
+  --t-fast: 150ms;
+  --t-base: 220ms;
+  --ease: cubic-bezier(.2, .6, .3, 1);
+}
+
+/* ---------- 亮色主题 ---------- */
+[data-theme="light"] {
+  --brand: #E8590C;
+  --brand-soft: #C2410C;
+  --brand-deep: #9A3412;
+  --brand-wash: rgba(232, 89, 12, .10);
+
+  --bg: #FFFFFF;
+  --surface: #F6F5F3;
+  --surface-2: #EFEEEB;
+  --text: #1F1E1C;
+  --text-dim: #6B6862;
+  --text-faint: #8C8880;
+  --border: rgba(0, 0, 0, .12);
+  --border-strong: rgba(0, 0, 0, .26);
+  --overlay: rgba(30, 28, 26, .78);
+
+  --ok: #1D9E75;
+  --warn: #BA7517;
+  --err: #A32D2D;
+}
+
+/* 跟随系统偏好：用户未手动选择时，亮色系统默认走亮色主题 */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --brand-soft: #C2410C;
+    --brand-deep: #9A3412;
+    --brand-wash: rgba(232, 89, 12, .10);
+    --bg: #FFFFFF;
+    --surface: #F6F5F3;
+    --surface-2: #EFEEEB;
+    --text: #1F1E1C;
+    --text-dim: #6B6862;
+    --text-faint: #8C8880;
+    --border: rgba(0, 0, 0, .12);
+    --border-strong: rgba(0, 0, 0, .26);
+    --overlay: rgba(30, 28, 26, .78);
+    --ok: #1D9E75;
+    --warn: #BA7517;
+    --err: #A32D2D;
+  }
+}
